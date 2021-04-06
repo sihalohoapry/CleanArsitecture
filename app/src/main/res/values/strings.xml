@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CleanArsitecture</string>
+    <string name="genre">Genre</string>
+    <string name="all_games">All Games</string>
+</resources>
