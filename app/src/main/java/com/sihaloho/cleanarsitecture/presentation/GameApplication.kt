@@ -16,7 +16,6 @@ class GameApplication : Application() {
             androidContext(this@GameApplication)
             modules(
                 listOf(
-                    dataBaseModule,
                     networkModule,
                     repositoryModule,
                     useCaseModule,

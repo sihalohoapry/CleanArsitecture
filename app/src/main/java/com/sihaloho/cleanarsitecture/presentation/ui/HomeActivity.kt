@@ -31,19 +31,8 @@ class HomeActivity : AppCompatActivity() {
     private fun setData() {
         homeViewModel.getListGame.observe(this, { data ->
             if (data != null) {
-                when (data) {
-                    is Resource.Loading -> binding.progressBar.visibility = View.VISIBLE
-                    is Resource.Success -> {
-                        binding.progressBar.visibility = View.GONE
-                        adapterGame.setData(data.data)
-                        adapterGame.notifyDataSetChanged()
-                    }
-                    is Resource.Error -> {
-                        binding.progressBar.visibility = View.GONE
-                        Toast.makeText(this, data.message, Toast.LENGTH_SHORT).show()
-
-                    }
-                }
+                adapterGame.setData(data)
+                adapterGame.notifyDataSetChanged()
             }
         })
     }
