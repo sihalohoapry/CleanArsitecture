@@ -1,5 +1,6 @@
 package com.sihaloho.cleanarsitecture.data.utils
 
+import com.sihaloho.cleanarsitecture.data.source.local.entity.GameEntity
 import com.sihaloho.cleanarsitecture.data.source.remote.response.ListGames
 import com.sihaloho.cleanarsitecture.domain.entity.Game
 
@@ -20,44 +21,35 @@ object DataMapper {
         }
         return listGames
     }
-//    fun responseToEntities(input: List<ListGames>) : List<ListGameEntity>{
-//        val listGames = ArrayList<ListGameEntity>()
-//        input.map {
-//            val game =ListGameEntity(
-//                gameListId =it.id.toString(),
-//                rating = it.rating,
-//                ratingsCount = it.ratingsCount,
-//                released = it.released,
-//                backgroundImage = it.backgroundImage,
-//                name = it.name,
-//                isFavorite = false
-//            )
-//            listGames.add(game)
-//        }
-//        return listGames
-//    }
-//
-//    fun entitiesToDomain(input: List<ListGameEntity>) : List<Game> =
-//    input.map {
-//        Game(
-//            rating = it.rating,
-//            id = it.gameListId.toInt(),
-//            ratingsCount = it.ratingsCount,
-//            released = it.released,
-//            backgroundImage = it.backgroundImage,
-//            name = it.name
-//        )
-//    }
-//
-//    fun domainToEntities(input: Game) = ListGameEntity(
-//        gameListId =input.id.toString(),
-//        rating = input.rating,
-//        ratingsCount = input.ratingsCount,
-//        released = input.released,
-//        backgroundImage = input.backgroundImage,
-//        name = input.name,
-//        isFavorite = false
-//    )
+    fun responseToEntities(input: List<ListGames>) : List<GameEntity>{
+        val listGames = ArrayList<GameEntity>()
+        input.map {
+            val game =GameEntity(
+                id = it.id,
+                rating = it.rating,
+                ratingsCount = it.ratingsCount,
+                released = it.released,
+                backgroundImage = it.backgroundImage,
+                name = it.name,
+            )
+            listGames.add(game)
+        }
+        return listGames
+    }
+
+    fun entitiesToDomain(input: List<GameEntity>) : List<Game> =
+    input.map {
+        Game(
+            id = it.id,
+            rating = it.rating,
+            ratingsCount = it.ratingsCount,
+            released = it.released,
+            backgroundImage = it.backgroundImage,
+            name = it.name
+        )
+    }
+
+
 
 
 }

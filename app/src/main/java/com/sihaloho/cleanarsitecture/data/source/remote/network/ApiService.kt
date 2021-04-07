@@ -7,7 +7,7 @@ import retrofit2.http.GET
 
 interface ApiService {
 
-    @GET("/games?key=${BuildConfig.API_KEY}")
+    @GET("games?key="+ BuildConfig.API_KEY)
     suspend fun getListGame() : ResponseGame
 
 }
