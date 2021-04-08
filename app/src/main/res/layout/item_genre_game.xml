@@ -17,7 +17,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/iv_image_top_game"
+            android:id="@+id/iv_image_game"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@android:color/white"
@@ -44,11 +44,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            app:layout_constraintBottom_toTopOf="@+id/tv_title_top_game"
+            app:layout_constraintBottom_toTopOf="@+id/tv_title_game"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/tv_title_top_game"
+            android:id="@+id/tv_title_game"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -65,7 +65,7 @@
             tools:text="PES 2021" />
 
         <TextView
-            android:id="@+id/tv_date_top_game"
+            android:id="@+id/tv_date_game"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -78,11 +78,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title_top_game"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_game"
             tools:text="12-12-21" />
 
         <TextView
-            android:id="@+id/tv_rating_top_game"
+            android:id="@+id/tv_rating_game"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
