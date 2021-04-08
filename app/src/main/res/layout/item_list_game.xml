@@ -86,7 +86,7 @@
 
         <View
             android:id="@+id/view2"
-            android:layout_width="40dp"
+            android:layout_width="50dp"
             android:layout_height="20dp"
             android:background="#7F000000"
             app:layout_constraintEnd_toEndOf="parent"
@@ -101,6 +101,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="5.0"
+            android:textColor="@color/white"
             app:drawableRightCompat="@drawable/ic_stat_rate" />
 
 

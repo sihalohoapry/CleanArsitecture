@@ -1,4 +1,4 @@
-package com.sihaloho.cleanarsitecture.presentation
+package com.sihaloho.cleanarsitecture.presentation.di
 
 import android.app.Application
 import com.sihaloho.cleanarsitecture.presentation.di.*

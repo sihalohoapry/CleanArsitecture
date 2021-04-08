@@ -14,6 +14,7 @@ class RemoteDataSource(private val apiService: ApiService) {
     fun getDataGame(): Flow<List<ListGames>> =
          flow {
             try {
+
                 val response = apiService.getListGame().resultGames
                 emit(response)
 

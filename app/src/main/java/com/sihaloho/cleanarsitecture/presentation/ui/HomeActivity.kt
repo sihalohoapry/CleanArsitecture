@@ -5,9 +5,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.sihaloho.cleanarsitecture.R
-import com.sihaloho.cleanarsitecture.data.Resource
 import com.sihaloho.cleanarsitecture.databinding.ActivityMainBinding
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -26,13 +23,17 @@ class HomeActivity : AppCompatActivity() {
         setAdapterGame()
         setData()
 
+
     }
 
     private fun setData() {
+        binding.progressBar.visibility = View.VISIBLE
         homeViewModel.getListGame.observe(this, { data ->
             if (data != null) {
                 adapterGame.setData(data)
                 adapterGame.notifyDataSetChanged()
+                binding.progressBar.visibility = View.GONE
+
             }
         })
     }
