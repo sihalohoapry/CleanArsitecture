@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
+import com.sihaloho.cleanarsitecture.data.Resource
 import com.sihaloho.cleanarsitecture.databinding.ActivityMainBinding
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -30,10 +31,19 @@ class HomeActivity : AppCompatActivity() {
         binding.progressBar.visibility = View.VISIBLE
         homeViewModel.getListGame.observe(this, { data ->
             if (data != null) {
-                adapterGame.setData(data)
-                adapterGame.notifyDataSetChanged()
-                binding.progressBar.visibility = View.GONE
+                when (data) {
+                    is Resource.Loading -> binding.progressBar.visibility = View.VISIBLE
+                    is Resource.Success -> {
+                        binding.progressBar.visibility = View.GONE
+                        adapterGame.setData(data.data)
+                        adapterGame.notifyDataSetChanged()
+                    }
+                    is Resource.Error -> {
+                        binding.progressBar.visibility = View.GONE
+                        Toast.makeText(this, data.message, Toast.LENGTH_SHORT).show()
 
+                    }
+                }
             }
         })
     }

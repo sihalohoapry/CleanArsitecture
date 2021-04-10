@@ -3,6 +3,7 @@ package com.sihaloho.cleanarsitecture.data.source.remote
 import com.sihaloho.cleanarsitecture.data.Resource
 import com.sihaloho.cleanarsitecture.data.source.remote.response.ResponseApi
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
 
 abstract class NetworkBoundResource<ResultType, RequestType> {
