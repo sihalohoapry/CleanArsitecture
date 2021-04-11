@@ -1,4 +1,4 @@
-package com.sihaloho.cleanarsitecture.presentation
+package com.sihaloho.cleanarsitecture.presentation.di
 
 import android.app.Application
 import com.sihaloho.cleanarsitecture.presentation.di.*
@@ -16,7 +16,6 @@ class GameApplication : Application() {
             androidContext(this@GameApplication)
             modules(
                 listOf(
-                    dataBaseModule,
                     networkModule,
                     repositoryModule,
                     useCaseModule,
